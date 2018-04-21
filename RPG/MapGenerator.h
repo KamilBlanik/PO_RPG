@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Enemy.h"
+#include "Npc.h"
 #include <string>
 #include <vector>
 
@@ -11,6 +12,7 @@ public:
 	std::string name;
 	int difficult;
 	void spawnEnemy(std::vector<Enemy> enemy);
+	void spawnNpc(std::vector<Npc> npc);
 };
 
 #endif

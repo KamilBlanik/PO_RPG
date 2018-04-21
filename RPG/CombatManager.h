@@ -1,9 +1,9 @@
 #if !defined(_COMBATMANAGER_H)
 #define _COMBATMANAGER_H
 
+#include "stdafx.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "stdafx.h"
 
 class CombatManager {
 public:

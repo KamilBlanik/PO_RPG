@@ -9,16 +9,23 @@
 
 class Character {
 public:
+	Character();
+	virtual ~Character();
 	std::string name;
 	int level;
-	void attack(int damage);
-	void defend(int incraseArmor);
+	int attack();
+	int defend();
+	void getHitted(int damage);
+	bool checkAlive();
 	void useSkill(Skills skill);
 protected:
+	bool isAlive;
 	int health;
 	int mana;
 	int armor;
+	int bonusArmor;
 	int baseDmg;
+	int bonusDmg;
 	std::vector<Skills> skill;
 };
 

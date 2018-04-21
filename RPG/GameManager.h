@@ -8,6 +8,7 @@
 
 class GameManager {
 private:
+	int choice;
 	bool gameRunning;
 public:
 	GameManager();

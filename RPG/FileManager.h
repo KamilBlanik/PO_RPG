@@ -1,8 +1,8 @@
 #if !defined(_FILEMANAGER_H)
 #define _FILEMANAGER_H
 
-#include "Player.h"
 #include "stdafx.h"
+#include "Player.h"
 
 class FileManager {
 public:

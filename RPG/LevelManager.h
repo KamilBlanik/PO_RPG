@@ -1,8 +1,8 @@
 #if !defined(_LEVELMANAGER_H)
 #define _LEVELMANAGER_H
 
-#include "Player.h"
 #include "stdafx.h"
+#include "Player.h"
 
 class LevelManager {
 public:

@@ -15,10 +15,10 @@ void GameManager::gameMenu() {
 }
 
 void GameManager::goToDangeon(Player player) {
-
+	choice = 1;
 }
 
 void GameManager::goToCity(Player player) {
-
+	choice = 2;
 }
 
