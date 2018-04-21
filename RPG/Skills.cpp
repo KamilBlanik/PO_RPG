@@ -3,11 +3,14 @@
 
 Skills::Skills() {
 	name = "Nieznany";
+	value = 0;
+	price = 0;
+	skillLevel = 0;
 }
 
 Skills::~Skills() {
 	name = "Nieznany";
-	damage = 0;
+	value = 0;
 	price = 0;
 	skillLevel = 0;
 }
@@ -16,8 +19,12 @@ void Skills::setName(std::string name) {
 	this->name = name;
 }
 
-void Skills::setDamge(int dmg) {
-	this->damage = dmg;
+void Skills::setType(std::string type) {
+	this->type = type;
+}
+
+void Skills::setValue(int val) {
+	this->value = val;
 }
 
 void Skills::setPrice(int price) {
@@ -32,8 +39,12 @@ std::string Skills::getName() {
 	return name;
 }
 
-int Skills::getDamage() {
-	return damage;
+std::string Skills::getType() {
+	return type;
+}
+
+int Skills::getValue() {
+	return value;
 }
 
 int Skills::getPrice() {

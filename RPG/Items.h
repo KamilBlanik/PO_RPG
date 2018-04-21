@@ -9,8 +9,24 @@ private:
 	std::string name;
 	std::string type;
 	int price;
-	int stats;
-	int necesseryLevel;
+	int bonusDmg;
+	int bonusHp;
+	int bonusMana;
+	int bonusArmor;
+	int itemLevel;
+public:
+	Items(
+		std::string name, 
+		std::string type, 
+		int price,
+		int bonusDmg,
+		int bonusHp,
+		int bonusMana,
+		int bonusArmor,
+		int itemLevel);
+	Items();
+	~Items();
+
 };
 
 #endif

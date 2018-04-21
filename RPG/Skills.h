@@ -7,18 +7,21 @@
 class Skills {
 private:
 	std::string name;
-	int damage;
+	std::string type;
+	int value;
 	int price;
 	int skillLevel;
 public:
 	Skills();
 	~Skills();
 	void setName(std::string name);
-	void setDamge(int dmg);
+	void setType(std::string type);
+	void setValue(int vl);
 	void setPrice(int price);
 	void setSkillLevel(int lvl);
 	std::string getName();
-	int getDamage();
+	std::string getType();
+	int getValue();
 	int getPrice();
 	int getSkillLevel();
 };
