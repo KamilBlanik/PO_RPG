@@ -34,7 +34,7 @@ int Character::defend() {
 }
 
 void Character::getHitted(int damage) {
-	health = health - (damage-(damage*(armor/100)));
+	health = health - int(damage-(damage*(armor/100)));
 	
 }
 
