@@ -2,6 +2,7 @@
 #define _PLAYER_H
 
 #include <vector>
+#include <iostream>
 #include "stdafx.h"
 #include "Character.h"
 #include "Items.h"

@@ -7,7 +7,7 @@ Player::Player() {
 	money = 0;
 	inventory.clear();
 	backpack.clear();
-	
+
 
 }
 
@@ -17,7 +17,7 @@ Player::~Player() {
 	money = 0;
 	inventory.clear();
 	backpack.clear();
-	
+
 }
 
 void Player::escape() {
@@ -25,6 +25,72 @@ void Player::escape() {
 }
 
 void Player::statsManagement() {
+	int choice = 0;
+	bool inStatsManagement = true;
+	while (inStatsManagement) {
+		system("cls");
+		std::cout << "Masz " << getSkillPoints() << " punktow umjejetnosci do rozdania.\n";
+		std::cout << "1. Dodaj 10 pkt do HP(1PU)\n2. Dodaj 5 pkt do many(1PU)\n3. Dodaj 2 pkt do ataku(1PU)\n4. Dodaj 2 pkt do obrony(1PU)\n5. Powrot\n";
+		std::cout << "Podaj wybor: "; std::cin >> choice;
+
+		switch (choice)
+		{
+		case 1: {
+			if (getSkillPoints() == 0) {
+				std::cout << "Nie mozesz sie rozwijac, masz za malo PU\n";
+				system("pause");
+				break;
+			}
+			skillPoints--;
+			health+=10;
+		}
+				break;
+		case 2: {
+			if (getSkillPoints() == 0) {
+				std::cout << "Nie mozesz sie rozwijac, masz za malo PU\n";
+				system("pause");
+				break;
+			}
+			skillPoints--;
+			mana += 5;
+
+		}
+				break;
+		case 3: {
+			if (getSkillPoints() == 0) {
+				std::cout << "Nie mozesz sie rozwijac, masz za malo PU\n";
+				system("pause");
+				break;
+			}
+			skillPoints--;
+			baseDmg += 2;
+
+		}
+				break;
+		case 4: {
+			if (getSkillPoints() == 0) {
+				std::cout << "Nie mozesz sie rozwijac, masz za malo PU\n";
+				system("pause");
+				break;
+			}
+			skillPoints--;
+			armor += 2;
+
+		}
+				break;
+		case 5: {
+			inStatsManagement = false;
+
+		}
+				break;
+		default: {
+			std::cout << "Podaj popawny wybor!\n";
+			system("pause");
+		}
+				break;
+		}
+
+	}
 
 }
 
@@ -61,7 +127,7 @@ void Player::addItemToInv(Items *item) {
 }
 
 void Player::deleteItemFromBp(Items *item) {
-	for (int i = 0; i < backpack.size()	; i++)
+	for (int i = 0; i < backpack.size(); i++)
 	{
 		if (backpack[i] == item) {
 			delete backpack[i];
