@@ -40,6 +40,7 @@ void Character::getHit(int damage) {
 
 bool Character::checkAlive() {
 	if (health > 0) {
+
 		return true;
 	}
 	else
