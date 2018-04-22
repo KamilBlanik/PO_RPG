@@ -12,8 +12,8 @@ private:
 	int experience;
 	int skillPoints;
 	int money;
-	std::vector<Items> inventory;
-	std::vector<Items> backpack;
+	std::vector<Items*> inventory;
+	std::vector<Items*> backpack;
 	
 public:
 	Player();
@@ -21,20 +21,20 @@ public:
 	void setExp(int exp);
 	void setSkillPoints(int sp);
 	void setMoney(int money);
-	void addItemToInv(Items item);
-	void addItemToBp(Items item);
-	void deleteItemFromInv(Items item);
-	void deleteItemFromBp(Items item);
+	void addItemToInv(Items *item);
+	void addItemToBp(Items *item);
+	void deleteItemFromInv(Items *item);
+	void deleteItemFromBp(Items *item);
 	void escape();
 	void statsManagement();
 	void inventoryManagement();
 	void backpackManagement();
-	void talkToNpc(Npc npc);
+	void talkToNpc(Npc *npc);
 	int getExp();
 	int getSkillPoints();
 	int getMoney();
-	std::vector<Items> getInventory();
-	std::vector<Items> getBp();
+	std::vector<Items*> getInventory();
+	std::vector<Items*> getBp();
 };
 
 #endif
