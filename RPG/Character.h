@@ -15,7 +15,7 @@ public:
 	int level;
 	int attack();
 	int defend();
-	void getHitted(int damage);
+	void getHit(int damage);
 	bool checkAlive();
 	void useSkill(Skills skill);
 protected:

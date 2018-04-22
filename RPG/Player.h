@@ -8,16 +8,33 @@
 #include "Npc.h"
 
 class Player : public Character {
-public:
+private:
 	int experience;
+	int skillPoints;
+	int money;
 	std::vector<Items> inventory;
 	std::vector<Items> backpack;
-	int money;
+	
+public:
+	Player();
+	~Player();
+	void setExp(int exp);
+	void setSkillPoints(int sp);
+	void setMoney(int money);
+	void addItemToInv(Items item);
+	void addItemToBp(Items item);
+	void deleteItemFromInv(Items item);
+	void deleteItemFromBp(Items item);
 	void escape();
 	void statsManagement();
 	void inventoryManagement();
 	void backpackManagement();
 	void talkToNpc(Npc npc);
+	int getExp();
+	int getSkillPoints();
+	int getMoney();
+	std::vector<Items> getInventory();
+	std::vector<Items> getBp();
 };
 
 #endif

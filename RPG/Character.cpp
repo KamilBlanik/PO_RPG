@@ -33,7 +33,7 @@ int Character::defend() {
 	return armor = armor + bonusArmor;
 }
 
-void Character::getHitted(int damage) {
+void Character::getHit(int damage) {
 	health = health - int(damage-(damage*(armor/100)));
 	
 }
