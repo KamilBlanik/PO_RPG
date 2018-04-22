@@ -2,7 +2,7 @@
 #include "Enemy.h"
 #include "Items.h"
 
-void Enemy::dropItem(Items loot) {
+void Enemy::dropItem(Items* loot) {
 
 }
 

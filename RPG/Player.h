@@ -24,8 +24,8 @@ public:
 	void setMoney(int money);
 	void addItemToInv(Items *item);
 	void addItemToBp(Items *item);
-	void deleteItemFromInv(Items *item);
-	void deleteItemFromBp(Items *item);
+	void deleteItemFromInv(int i);
+	void deleteItemFromBp(int i);
 	void escape();
 	void statsManagement();
 	void inventoryManagement();

@@ -42,7 +42,7 @@ void Player::statsManagement() {
 				break;
 			}
 			skillPoints--;
-			health+=10;
+			health += 10;
 		}
 				break;
 		case 2: {
@@ -87,7 +87,7 @@ void Player::statsManagement() {
 			std::cout << "Podaj popawny wybor!\n";
 			system("pause");
 		}
-				break;
+				 break;
 		}
 
 	}
@@ -95,10 +95,47 @@ void Player::statsManagement() {
 }
 
 void Player::inventoryManagement() {
+	system("cls");
+	std::cout << "Aktualnie uzywasz: ";
 
 }
 
 void Player::backpackManagement() {
+	bool inBPManagement = true;
+	int choice = 0;
+	while (inBPManagement)
+	{
+		system("cls");
+		std::cout << "Masz w plecaku " << backpack.size() << " przedmiotow\nOto one:\n";
+		for (unsigned int i = 0; i < backpack.size(); i++)
+		{
+			std::cout << i << ": " << backpack[i] << std::endl;
+		}
+		std::cout << "\n1. Zniszcz przedmiot\n2. Zaloz przedmiot.\n3. Powrot";
+		std::cout << "Podaj wybor: "; std::cin >> choice; std::cout << std::endl;
+		switch (choice)
+		{
+		case 1: {
+			int i;
+			std::cout << "Podaj numer przedmiotu: "; std::cin >> i;
+			deleteItemFromBp(i);
+		}
+		case 2: {
+			//TODO
+			std::cout << "Gdzie zalozyc?\n";
+		}
+				break;
+		case 3: {
+			inBPManagement = false;
+		}
+				break;
+		default: {
+			std::cout << "Podaj poprawny wybor!\n";
+			system("cls");
+		}
+			break;
+		}
+	}
 
 }
 
@@ -126,26 +163,18 @@ void Player::addItemToInv(Items *item) {
 	inventory.push_back(item);
 }
 
-void Player::deleteItemFromBp(Items *item) {
-	for (int i = 0; i < backpack.size(); i++)
-	{
-		if (backpack[i] == item) {
-			delete backpack[i];
-			backpack.erase(backpack.begin() + i);
-			break;
-		}
-	}
+void Player::deleteItemFromBp(int i) {
+
+	delete backpack[i];
+	backpack.erase(backpack.begin() + i);
+
 }
 
-void Player::deleteItemFromInv(Items *item) {
-	for (int i = 0; i < inventory.size(); i++)
-	{
-		if (inventory[i] == item) {
-			delete inventory[i];
-			inventory.erase(inventory.begin() + i);
-			break;
-		}
-	}
+void Player::deleteItemFromInv(int i) {
+
+	delete inventory[i];
+	inventory.erase(inventory.begin() + i);
+
 }
 
 int Player::getExp() {

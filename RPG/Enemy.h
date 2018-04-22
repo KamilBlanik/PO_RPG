@@ -8,8 +8,8 @@
 
 class Enemy : public Character {
 public:
-	std::vector<Items> loot;
-	void dropItem(Items loot);
+	std::vector<Items*> loot;
+	void dropItem(Items* loot);
 };
 
 #endif

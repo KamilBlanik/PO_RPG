@@ -7,8 +7,6 @@
 
 class CombatManager {
 public:
-	Player player;
-	Enemy enemy;
 	void combat(Player player, Enemy enemy);
 };
 
