@@ -7,8 +7,7 @@ Player::Player() {
 	money = 0;
 	inventory.clear();
 	backpack.clear();
-
-
+	
 }
 
 Player::~Player() {
@@ -156,43 +155,43 @@ void Player::setMoney(int money) {
 }
 
 void Player::addItemToBp(Items *item) {
-	backpack.push_back(item);
+	this->backpack.push_back(item);
 }
 
 void Player::addItemToInv(Items *item) {
-	inventory.push_back(item);
+	this->inventory.push_back(item);
 }
 
 void Player::deleteItemFromBp(int i) {
 
-	delete backpack[i];
-	backpack.erase(backpack.begin() + i);
+	delete this->backpack[i];
+	this->backpack.erase(backpack.begin() + i);
 
 }
 
 void Player::deleteItemFromInv(int i) {
 
-	delete inventory[i];
-	inventory.erase(inventory.begin() + i);
+	delete this->inventory[i];
+	this->inventory.erase(inventory.begin() + i);
 
 }
 
 int Player::getExp() {
-	return experience;
+	return this->experience;
 }
 
 int Player::getSkillPoints() {
-	return skillPoints;
+	return this->skillPoints;
 }
 
 int Player::getMoney() {
-	return money;
+	return this->money;
 }
 
 std::vector<Items*> Player::getInventory() {
-	return inventory;
+	return this->inventory;
 }
 
 std::vector<Items*> Player::getBp() {
-	return backpack;
+	return this->backpack;
 }
