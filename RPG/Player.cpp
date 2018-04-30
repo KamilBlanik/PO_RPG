@@ -195,3 +195,40 @@ std::vector<Items*> Player::getInventory() {
 std::vector<Items*> Player::getBp() {
 	return this->backpack;
 }
+
+std::ostream& operator<<(std::ostream&  out, Player * player) {
+	out << player->getName() << "\n";
+	out << player->getLevel() << "\n";
+	out << player->getHp() << "\n";
+	out << player->getArmor() << "\n";
+	out << player->getMana() << "\n";
+	out << player->getDmg() << "\n";
+	out << player->getExp() << "\n";
+	out << player->getSkillPoints() << "\n";
+	out << player->getMoney() ;
+	return out;
+}
+
+Player* operator>>(std::ifstream& in, Player * player) {
+	std::string line;
+	std::getline(in, line);
+	player->setName(line);
+	std::getline(in, line);
+	player->setLevel(stoi(line));
+	std::getline(in, line);
+	player->setHp(stoi(line));
+	std::getline(in, line);
+	player->setArmor(stoi(line));
+	std::getline(in, line);
+	player->setMana(stoi(line));
+	std::getline(in, line);
+	player->setDmg(stoi(line));
+	std::getline(in, line);
+	player->setExp(stoi(line));
+	std::getline(in, line);
+	player->setSkillPoints(stoi(line));
+	std::getline(in, line);
+	player->setMoney(stoi(line));
+
+	return player;
+}

@@ -2,6 +2,8 @@
 #define _ITEMS_H
 
 #include <string>
+#include <fstream>
+#include <iostream>
 #include "stdafx.h"
 
 class Items {
@@ -15,6 +17,7 @@ private:
 	int bonusArmor;
 	int itemLevel;
 public:
+	bool check;
 	Items(
 		std::string name, 
 		std::string type, 
@@ -43,6 +46,9 @@ public:
 	int getMana();
 	int getArmor();
 	int getItemLvl();
+
+	friend std::ostream& operator<<(std::ostream& out, Items * item);
+	friend Items* operator>>(std::ifstream& in, Items * item);
 };
 
 #endif

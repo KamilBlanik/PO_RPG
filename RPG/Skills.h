@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include <string>
+#include <fstream>
+#include <iostream>
 
 class Skills {
 private:
@@ -11,7 +13,9 @@ private:
 	int value;
 	int price;
 	int skillLevel;
+	
 public:
+	bool check;
 	Skills();
 	~Skills();
 	void setName(std::string name);
@@ -24,6 +28,9 @@ public:
 	int getValue();
 	int getPrice();
 	int getSkillLevel();
+
+	friend std::ostream& operator<<(std::ostream& out, Skills * skill);
+	friend Skills* operator>>(std::ifstream& in, Skills * skill);
 };
 
 #endif 

@@ -124,11 +124,11 @@ std::string Character::getName() {
 }
 
 int Character::getArmor() {
-	return armor + bonusArmor;
+	return armor;
 }
 
 int Character::getDmg() {
-	return baseDmg + bonusDmg;
+	return baseDmg;
 }
 
 int Character::getMana() {

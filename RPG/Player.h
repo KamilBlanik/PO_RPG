@@ -36,6 +36,9 @@ public:
 	int getMoney();
 	std::vector<Items*> getInventory();
 	std::vector<Items*> getBp();
+
+	friend std::ostream& operator<<(std::ostream& out, Player * player);
+	friend Player* operator>>(std::ifstream& in, Player * player);
 };
 
 #endif

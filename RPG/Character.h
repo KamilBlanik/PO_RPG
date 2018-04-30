@@ -2,6 +2,7 @@
 #define _CHARACTER_H
 
 #include <vector>
+#include <fstream>
 #include <string>
 #include "stdafx.h"
 #include "Skills.h"

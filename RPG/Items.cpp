@@ -18,6 +18,7 @@ Items::Items(
 	this->bonusHp = bonusHp;
 	this->bonusMana = bonusMana;
 	this->itemLevel = itemLevel;
+	check = false;
 }
 
 Items::Items() {
@@ -29,7 +30,7 @@ Items::Items() {
 	bonusHp = 0;
 	bonusMana = 0;
 	itemLevel = 0;
-
+	check = false;
 }
 
 Items::~Items() {
@@ -41,6 +42,7 @@ Items::~Items() {
 	bonusHp = 0;
 	bonusMana = 0;
 	itemLevel = 0;
+	check = false;
 }
 
 void Items::setName(std::string name) {
@@ -105,4 +107,44 @@ int Items::getArmor() {
 
 int Items::getItemLvl() {
 	return itemLevel;
+}
+
+std::ostream& operator<<(std::ostream& out, Items * item) {
+	out <<"\n"<< item->getName() << "\n";
+	out << item->getType() << "\n";
+	out << item->getPrice() << "\n";
+	out << item->getDmg() << "\n";
+	out << item->getHp() << "\n";
+	out << item->getMana() << "\n";
+	out << item->getArmor() << "\n";
+	out << item->getItemLvl();
+	return out;
+}
+
+Items* operator>>(std::ifstream& in, Items * item) {
+	std::string line;
+	std::getline(in, line);
+	if (line == "***") {
+		item->check = true;
+		return item;
+	}
+	else {
+		item->setName(line);
+		std::getline(in, line);
+		item->setType(line);
+		std::getline(in, line);
+		item->setPrice(stoi(line));
+		std::getline(in, line);
+		item->setDmg(stoi(line));
+		std::getline(in, line);
+		item->setHp(stoi(line));
+		std::getline(in, line);
+		item->setMana(stoi(line));
+		std::getline(in, line);
+		item->setArmor(stoi(line));
+		std::getline(in, line);
+		item->setItemLvl(stoi(line));
+		return item;
+	}
+	
 }
